@@ -14,11 +14,6 @@ To use the `CardBrandValidator` function, follow these steps:
 
 3. The function will return the identified card brand as a string.
 
-## Function Signature
-
-````javascript
-function CardBrandValidator(cardNumber)
-
 ## Supported Card Brands and Patterns
 
 The `CardBrandValidator` function supports the following card brands and their associated regular expression patterns:
@@ -39,4 +34,4 @@ You can use the `CardBrandValidator` function to identify the card brand of a gi
 const cardNumber = "4111 1111 1111 1111"; // Example Visa card number
 const brand = CardBrandValidator(cardNumber);
 console.log(brand); // Output: "visa"
-````
+```
