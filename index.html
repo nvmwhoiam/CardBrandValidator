@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta name="description"
+        content="Card Brand Validator is a modern web application that provides real-time credit card brand detection and validation. It features a beautiful UI with live card number formatting, brand detection, and validation using the Luhn algorithm.">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon-32x32.png">
+    <link rel="canonical" href="https://lynqis.io/project/card-brand-validator" />
+    <meta name="author" content="nvmwhoiam">
+    <meta name="keywords"
+        content="credit card validator, card number formatter, Luhn algorithm checker, card type detector, Visa, Mastercard, Amex, Discover, JCB, Diners, Maestro, real-time card validation, secure card input, credit card formatting tool, card number highlighting, payment card validation, credit card verification, card number validation, payment form integration, e-commerce checkout, developer tools, card number structure, credit card security, card input formatter, card number checker">
+    <meta name="theme-color" content="#1a1f2e">
+    <meta name="color-scheme" content="dark light">
+    <meta name="robots" content="index, follow">
+    <meta name="title" content="Card Brand Validator | Lynqis.io">
+    <title>Card Brand Validator | Lynqis.io</title>
+</head>
+
+<body>
+    <main class="main_container">
+
+        <section class="card-validator">
+
+            <h1>Card Brand Validator</h1>
+
+            <div class="credit-card">
+                <div class="card-front">
+                    <div class="card-logo">
+                        <img src="./assets/svgs/chip.svg" alt="Card Chip" class="chip-image">
+                        <img src="./assets/svgs/unknown.svg" alt="Card Brand" class="brand-image" id="cardBrandImage">
+                    </div>
+                    <div class="card-number" id="displayCardNumber">**** **** **** ****</div>
+                    <div class="card-details">
+                        <div class="card-holder">
+                            <div class="label">Card Holder</div>
+                            <div class="value">Mr John Doe</div>
+                        </div>
+                        <div class="card-expires">
+                            <div class="label">Expires</div>
+                            <div class="value">31/12/36</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-input-wrapper">
+                <div class="card-icons">
+                    <img src="./assets/svgs/visa.svg" alt="Visa" class="card-icon" data-brand="visa">
+                    <img src="./assets/svgs/mastercard.svg" alt="Mastercard" class="card-icon" data-brand="mastercard">
+                    <img src="./assets/svgs/amex.svg" alt="American Express" class="card-icon" data-brand="amex">
+                    <img src="./assets/svgs/discover.svg" alt="Discover" class="card-icon" data-brand="discover">
+                    <img src="./assets/svgs/jcb.svg" alt="JCB" class="card-icon" data-brand="jcb">
+                    <img src="./assets/svgs/diners.svg" alt="Diners" class="card-icon" data-brand="diners">
+                    <img src="./assets/svgs/maestro.svg" alt="Maestro" class="card-icon" data-brand="maestro">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="cardNumber" class="card-input" placeholder="Enter card number" maxlength="19"
+                        aria-label="Credit card number input">
+                    <div class="card-type" aria-live="polite"></div>
+                </div>
+            </div>
+            <p class="validation-message" aria-live="polite"></p>
+
+        </section>
+
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

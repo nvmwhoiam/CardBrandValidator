@@ -1,0 +1,188 @@
+@import './general/base.scss';
+@import './general/mixin.scss';
+
+.main_container {
+    min-height: 100vh;
+    @include Dflex(center);
+
+    .card-validator {
+        width: 100%;
+        max-width: 500px;
+        background-color: var(--background-color-secondary);
+        padding: var(--md-p);
+        border-radius: var(--border-radius-light);
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+
+            @media (max-width: 480px) {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    // Credit Card styles
+    .credit-card {
+        width: 100%;
+        max-width: 380px;
+        height: 240px;
+        margin: 0 auto 2rem;
+        perspective: 1000px;
+
+        @media (max-width: 480px) {
+            height: 200px;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .card-front {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: linear-gradient(45deg, #1f4037 0%, #99f2c8 100%);
+        border-radius: 15px;
+        padding: var(--md-p);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-logo {
+        height: 50px;
+        @include Dflex(space-between);
+
+        .chip-image {
+            width: 50px;
+            height: auto;
+
+            @media (max-width: 480px) {
+                width: 40px;
+            }
+        }
+
+        .brand-image {
+            width: 70px;
+            height: auto;
+        }
+    }
+
+    .card-number {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        font-family: 'Courier New', monospace;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+        .highlight {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    }
+
+    .card-details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+
+        .label {
+            font-size: 0.7rem;
+            margin-bottom: 5px;
+            opacity: 0.7;
+        }
+
+        .value {
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    // Card icons styles
+    .card-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--sm-p);
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: var(--border-radius-light);
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            height: auto;
+            opacity: 0.5;
+            transition: all var(--animation-speed);
+            filter: grayscale(100%);
+
+            @media (max-width: 480px) {
+                width: 35px;
+            }
+
+            &.active {
+                opacity: 1;
+                // filter: none;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    // Input styles
+    .card-input-wrapper {
+        .input-group {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .card-input {
+        &:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.1);
+        }
+
+        &.valid {
+            border-color: var(--success-color);
+            box-shadow: 0 0 0 3px rgba(var(--success-color), 0.1);
+        }
+
+        &.invalid {
+            border-color: var(--error-color);
+            box-shadow: 0 0 0 3px rgba(var(--error-color), 0.1);
+        }
+    }
+
+    // Validation message styles
+    .validation-message {
+        text-align: center;
+        min-height: 24px;
+        color: var(--text-color-secondary);
+        font-weight: 500;
+
+        &.error {
+            color: var(--error-color);
+        }
+
+        &.success {
+            color: var(--success-color);
+        }
+    }
+
+    // Card type display
+    .card-type {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        color: var(--text-color-secondary);
+    }
+}
